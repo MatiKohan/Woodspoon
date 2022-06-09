@@ -1,0 +1,16 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "incremental": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "target": "ES5",
+        "module": "commonjs",
+        "watch": false,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "typeRoots": ["./node_modules/@types"],
+        "lib": ["dom", "es6", "dom.iterable", "scripthost", "es2015", "es2015.core", "es2017", "es2017.string"]
+    },
+    "exclude": ["node_modules"]
+}
