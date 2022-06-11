@@ -1,0 +1,22 @@
+{
+  "name": "woodspoon",
+  "version": "1.0.0",
+  "description": "State-Machines framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatiKohan/Woodspoon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatiKohan/Woodspoon/issues"
+  },
+  "homepage": "https://github.com/MatiKohan/Woodspoon#readme",
+  "dependencies": {
+    "@types/node": "^17.0.41"
+  }
+}

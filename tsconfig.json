@@ -10,7 +10,9 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "typeRoots": ["./node_modules/@types"],
-        "lib": ["dom", "es6", "dom.iterable", "scripthost", "es2015", "es2015.core", "es2017", "es2017.string"]
+        "outDir": "dist",
+        "rootDir": "src",
+        "lib": ["dom", "es6", "dom.iterable", "scripthost", "es2015", "es2015.core", "es2017", "es2017.string", "es2016"]
     },
     "exclude": ["node_modules"]
 }
