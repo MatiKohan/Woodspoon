@@ -8,7 +8,7 @@ var printThirdEvent = function (state) {
 };
 //callback - prints running state
 var printState = function (state) {
-    console.log(state.getStateName() + " in now running");
+    console.log(state.getStateName() + " is now running");
 };
 //New state that prints if event occurs 3 times
 var state3 = new state_1.default("3", "third-state", printThirdEvent);
@@ -28,12 +28,7 @@ var backupFileName = "backup.txt";
 machine.dispatch("event1");
 machine.dispatch("event1");
 machine.shutDown(backupFileName);
-setTimeout(function () { }, 3000);
-// const lala = async () => {
-//   await machine.reload(backupFileName);
-// };
 machine.reload(backupFileName);
-setTimeout(function () { }, 3000);
 machine.dispatch("event1");
 machine.dispatch("event1");
 //# sourceMappingURL=app.js.map

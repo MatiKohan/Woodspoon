@@ -8,7 +8,7 @@ var printThirdEvent = function (state) {
 };
 //callback - prints running state
 var printState = function (state) {
-    console.log(state.getStateName() + " in now running");
+    console.log(state.getStateName() + " is now running");
 };
 //New state that prints if event occurs 3 times
 var state3 = new state_1.default("3", "third-state", printThirdEvent);

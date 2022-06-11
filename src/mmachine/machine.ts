@@ -25,10 +25,12 @@ export default class MStateMachine {
   }
 
   dispatch(event: string): void {
-    const nextState = this.currentState.getNextState(event);
-    if (nextState) {
-      this.currentState = nextState;
-      this.currentState?.run();
+    if (this.currentState) {
+      const nextState = this.currentState.getNextState(event);
+      if (nextState) {
+        this.currentState = nextState;
+        this.currentState?.run();
+      }
     }
   }
 
@@ -47,23 +49,19 @@ export default class MStateMachine {
     });
 
     console.log("Shutting down");
+    this.currentState = null;
   }
 
-  async reload(fileName: string) {
-    await fs.readFile(fileName, "utf8", (err, data) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
+  reload(fileName: string) {
+    const data = fs.readFileSync(fileName, { encoding: "utf8" });
 
-      if (this.states[data]) {
-        console.log("Reloading from backup...");
-        this.states[data].run();
-      } else {
-        console.log("Backuped state not found");
-        this.initialState.run();
-      }
-    });
+    if (data && this.states[data]) {
+      console.log("Reloading from backup...");
+      this.states[data].run();
+    } else {
+      console.log("Backed up state not found");
+      this.initialState.run();
+    }
 
     fs.unlink(fileName, (err) => {
       if (err) throw err;

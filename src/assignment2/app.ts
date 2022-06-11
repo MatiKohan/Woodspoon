@@ -9,7 +9,7 @@ const printThirdEvent = (state: MState) => {
 
 //callback - prints running state
 const printState = (state: MState) => {
-  console.log(`${state.getStateName()} in now running`);
+  console.log(`${state.getStateName()} is now running`);
 };
 
 //New state that prints if event occurs 3 times
